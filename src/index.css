@@ -1,13 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts for premium typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Playfair+Display:wght@400;700;900&family=Poppins:wght@400;600;700;900&family=Montserrat:wght@400;600;700;900&family=Roboto:wght@400;700;900&family=Oswald:wght@400;600;700&family=Raleway:wght@400;600;700;900&family=Lato:wght@400;700;900&family=Source+Sans+Pro:wght@400;600;700;900&family=Nunito:wght@400;600;700;900&family=Open+Sans:wght@400;600;700;800&family=Merriweather:wght@400;700;900&family=Rubik:wght@400;500;600;700;800;900&family=Work+Sans:wght@400;500;600;700;800;900&family=Fira+Sans:wght@400;500;600;700;800;900&family=Ubuntu:wght@400;500;700&family=Libre+Baskerville:wght@400;700&family=PT+Sans:wght@400;700&family=Noto+Sans:wght@400;500;600;700;800;900&family=Crimson+Text:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&family=Archivo+Black&family=Bebas+Neue&family=Righteous&family=Anton&family=Cabin:wght@400;500;600;700&family=Dosis:wght@400;500;600;700;800&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to bottom right, #000000, #dc2626, #1f2937);
+  overflow-x: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(220, 38, 38, 0.6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(220, 38, 38, 0.8);
+}
+
+/* Custom range slider styles */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-track {
+  background: #e5e5e5;
+  height: 8px;
+  border-radius: 4px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: linear-gradient(135deg, #dc2626, #1d4ed8);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+  transition: all 0.2s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: linear-gradient(135deg, #b91c1c, #1e40af);
+  transform: scale(1.15);
+  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.6);
+}
+
+input[type="range"]::-moz-range-track {
+  background: #e5e5e5;
+  height: 8px;
+  border-radius: 4px;
+  border: none;
+}
+
+input[type="range"]::-moz-range-thumb {
+  background: linear-gradient(135deg, #dc2626, #1d4ed8);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+  cursor: pointer;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Canvas hover effects */
+canvas {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+canvas:hover {
+  filter: brightness(1.1) saturate(1.1);
+  box-shadow: 0 8px 24px rgba(220, 38, 38, 0.35);
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* Custom button styles */
+button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Input focus styles */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.4);
+}
+
+/* Custom border styles */
+.border-l-4.border-red-600 {
+  border-left-width: 4px;
+  border-left-color: #dc2626; /* Red */
+}
+
+/* Gradient backgrounds */
+.bg-gradient-to-r.from-red-600.to-black {
+  background: linear-gradient(to right, #dc2626, #000000);
+}
+
+.bg-gradient-to-br.from-red-700.via-black.to-red-900 {
+  background: linear-gradient(to bottom right, #b91c1c, #000000, #7f1d1d);
+}
+
+/* Text gradients */
+.bg-gradient-to-r.from-red-600.to-black.bg-clip-text {
+  background: linear-gradient(to right, #dc2626, #000000);
+}
+
+/* Card shadows */
+.shadow-lg {
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
+}
+
+.shadow-md {
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.1);
+}
+
+/* Full screen app styles */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Glassmorphism effects */
+.backdrop-blur-xl {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.backdrop-blur-sm {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Enhanced gradient backgrounds */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.bg-gradient-secondary {
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+}
+
+/* Smooth animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-slideIn {
+  animation: slideIn 0.4s ease-out;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.3s ease-out;
+}
+
+/* Custom color inputs */
+input[type="color"] {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+input[type="color"]:hover {
+  border-color: rgba(220, 38, 38, 0.6);
+  transform: scale(1.05);
+}
+
+/* Enhanced scrollbars */
+.overflow-y-auto {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(220, 38, 38, 0.6) transparent;
 }
