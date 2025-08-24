@@ -2,6 +2,9 @@
 
 A world-class, industry-leading favicon generator that creates professional favicons with advanced features and complete packages.
 
+## Live Demo
+Experience the Premium Favicon Generator live: [https://wnfavicon-generator.web.app/](https://wnfavicon-generator.web.app/)
+
 ## Features
 
 ### 🎨 Advanced Design Capabilities
